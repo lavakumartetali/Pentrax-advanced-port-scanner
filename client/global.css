@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Cyberpunk Dark Theme - Pentrax Port Scanner
+   * Dark mode default with neon accents (blue, green, magenta)
+   */
+  :root {
+    /* Dark cyberpunk theme as default */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    /* Neon accent colors - Enhanced vibrancy */
+    --neon-blue: 199 100% 50%;
+    --neon-green: 120 100% 40%;
+    --neon-magenta: 320 100% 50%;
+    --neon-cyan: 180 100% 40%;
+  }
+
+  .dark {
+    /* Keep the same dark theme for explicit dark mode */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 199 89% 48%;
+
+    /* Neon accent colors - Enhanced vibrancy */
+    --neon-blue: 199 100% 50%;
+    --neon-green: 120 100% 40%;
+    --neon-magenta: 320 100% 50%;
+    --neon-cyan: 180 100% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    @apply dark;
+  }
+}
+
+@layer components {
+  .terminal {
+    @apply font-mono bg-black/40 border border-neon-green/30 p-4 rounded-lg;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 2px currentColor, 0 0 4px currentColor, 0 0 6px currentColor;
+  }
+
+  .neon-border {
+    box-shadow: 0 0 5px currentColor, inset 0 0 5px currentColor;
+  }
+
+  .glass-panel {
+    @apply bg-card/10 backdrop-blur-sm border border-border/50;
+  }
+
+  .typing-cursor::after {
+    content: '|';
+    @apply animate-blink text-neon-green;
+  }
+
+  .matrix-bg {
+    background-image:
+      linear-gradient(90deg, rgba(0,255,0,0.03) 1px, transparent 1px),
+      linear-gradient(rgba(0,255,0,0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
