@@ -216,7 +216,7 @@ export default function Index() {
                 },
                 {
                   title: "Visual Control",
-                  description: "All the power of Nmap with an intuitive visual interface",
+                  description: "Scan, analyze, and control your network through an interactive visual interface",
                   color: "neon-magenta"
                 },
                 {
